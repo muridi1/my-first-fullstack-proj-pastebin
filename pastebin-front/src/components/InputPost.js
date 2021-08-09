@@ -2,10 +2,11 @@ import React, {Fragment, useState} from "react";
 
 const InputPost = () => {
     const [text, setText] = useState("")
+    const [title, setTitle]= useState("")
 
     const onSubmitForm = async e => {
         e.preventDefault();
-        const body = { text }
+        const body = { text, title }
         const response = await fetch("http://localhost:4000/newpost", {
             method: "POST",
             headers:{"Content-Type": "application/json"},
@@ -23,6 +24,12 @@ const InputPost = () => {
             className="form-control" 
             value={text} 
             onChange={e => setText (e.target.value)}
+            />
+            <input 
+            type="text" 
+            className="form-control" 
+            value={title} 
+            onChange={e => setTitle (e.target.value)}
             />
             <button className="btn btn-success">Submit</button>
         </form>
