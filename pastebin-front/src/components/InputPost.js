@@ -12,7 +12,8 @@ const InputPost = () => {
             headers:{"Content-Type": "application/json"},
             body: JSON.stringify(body)
         })
-        console.log(response)
+        //console.log(response)
+        window.location="/";
     }
 
     return (
@@ -23,12 +24,15 @@ const InputPost = () => {
             type="text" 
             className="form-control" 
             value={text} 
+            placeholder="Paste text here"
+            size="50"
             onChange={e => setText (e.target.value)}
             />
             <input 
             type="text" 
             className="form-control" 
             value={title} 
+            placeholder="Title"
             onChange={e => setTitle (e.target.value)}
             />
             <button className="btn btn-success">Submit</button>
