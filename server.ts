@@ -33,7 +33,7 @@ const client = new Client({
 client.connect();
 
 app.get("/", async (req, res) => {
-  const dbres = await client.query('select * from pastebin');
+  const dbres = await client.query('select * from pastebin order by id DESC');
   res.json(dbres.rows);
 });
 
