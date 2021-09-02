@@ -5,7 +5,7 @@ const ListId = () => {
   const [list, setList] = useState([])
   
   const getList = async () => {
-    const response = await fetch("http://localhost:4000/")
+    const response = await fetch("http://localhost:4000/:id")
     const jsonData = await response.json()
 
     setList(jsonData)
